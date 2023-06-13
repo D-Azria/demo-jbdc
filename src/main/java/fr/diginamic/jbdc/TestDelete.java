@@ -13,7 +13,7 @@ public class TestDelete {
 
     static {
         ResourceBundle bundle = ResourceBundle.getBundle("database");
-        DB_URL = bundle.getString("database.driver")+bundle.getString("database.dist_url")+":"+bundle.getString("database.dist_port")+"/"+bundle.getString("database.dist_name");
+        DB_URL = bundle.getString("database.dist_url");
         DB_USER = bundle.getString("database.dist_user");
         DB_PW = bundle.getString("database.dist_pwd");
     }
