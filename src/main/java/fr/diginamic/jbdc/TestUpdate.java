@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class TestInsertion {
+public class TestUpdate {
     private static final String DB_URL;
     private static final String DB_USER;
     private static final String DB_PW;
@@ -21,7 +21,7 @@ public class TestInsertion {
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
              Statement monStatement = connection.createStatement()){
-            int nb = monStatement.executeUpdate("INSERT INTO FOURNISSEUR (NOM) VALUES ('La Maison de la Peinture')");
+            int nb = monStatement.executeUpdate("UPDATE FOURNISSEUR SET NOM='La Maison des Peintures' WHERE NOM='La Maison de la Peinture'");
             System.out.println(nb);
         } catch (SQLException e){
             System.err.println(e.getMessage());
