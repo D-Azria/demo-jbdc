@@ -1,5 +1,6 @@
 package fr.diginamic.jbdc;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,6 +8,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TestInsertion {
+    private static final Logger LOG = LoggerFactory.getLogger(TestInsertion.class);
     private static final String DB_URL;
     private static final String DB_USER;
     private static final String DB_PW;
@@ -24,7 +26,7 @@ public class TestInsertion {
             int nb = monStatement.executeUpdate("INSERT INTO FOURNISSEUR (NOM) VALUES ('La Maison de la Peinture')");
             System.out.println(nb);
         } catch (SQLException e){
-            System.err.println(e.getMessage());
+            LOG.error(e.getMessage());
         }
     }
 }

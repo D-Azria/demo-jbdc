@@ -1,5 +1,7 @@
 package fr.diginamic.jbdc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,6 +9,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TestUpdate {
+    private static final Logger LOG = LoggerFactory.getLogger(TestUpdate.class);
     private static final String DB_URL;
     private static final String DB_USER;
     private static final String DB_PW;
@@ -22,9 +25,9 @@ public class TestUpdate {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
              Statement monStatement = connection.createStatement()){
             int nb = monStatement.executeUpdate("UPDATE FOURNISSEUR SET NOM='La Maison des Peintures' WHERE NOM='La Maison de la Peinture'");
-            System.out.println(nb);
+            LOG.info(String.valueOf(nb));
         } catch (SQLException e){
-            System.err.println(e.getMessage());
+            LOG.error(e.getMessage());
         }
     }
 }

@@ -1,5 +1,6 @@
 package fr.diginamic.jbdc;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,6 +8,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TestDelete {
+    private static final Logger LOG = LoggerFactory.getLogger(TestDelete.class);
     private static final String DB_URL;
     private static final String DB_USER;
     private static final String DB_PW;
@@ -24,7 +26,7 @@ public class TestDelete {
             int nb = monStatement.executeUpdate("DELETE FROM FOURNISSEUR WHERE NOM='La Maison des Peintures'");
             System.out.println(nb);
         } catch (SQLException e){
-            System.err.println(e.getMessage());
+            LOG.error(e.getMessage());
         }
     }
 }

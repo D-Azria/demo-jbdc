@@ -1,0 +1,9 @@
+11:01:30.058 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT * FROM FOURNISSEUR
+11:01:30.086 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=1, nom='Française d’Imports'}
+11:01:30.087 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=2, nom='FDM SA'}
+11:01:30.087 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=3, nom='Dubois & Fils'}
+11:02:06.689 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT * FROM FOURNISSEUR
+11:03:05.670 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT * FROM FOURNISSEUR
+11:03:05.698 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=1, nom='Française d’Imports'}
+11:03:05.699 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=2, nom='FDM SA'}
+11:03:05.699 [main] INFO  fr.diginamic.jbdc.TestSelect - Fournisseur{ID=3, nom='Dubois & Fils'}
